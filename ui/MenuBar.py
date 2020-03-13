@@ -7,7 +7,7 @@ class MenuBar(object):
         self.__master = master
 
         self.__fdialog: FileDialog = FileDialog()
-        self.__fname: str = ""
+        self.fname: str = ""
 
         menu = Menu(self.__master)
         self.__master.config(menu=menu)
@@ -24,5 +24,14 @@ class MenuBar(object):
         menu.add_cascade(label="File", menu=file)
 
     def open_file(self):
-        self.__fname = self.__fdialog()
-        print(self.__fname)
+        self.fname = self.__fdialog()
+
+    # region properties
+    @property
+    def fname(self) -> str:
+        return self.__fname
+
+    @fname.setter
+    def fname(self, fname: str):
+        self.__fname = fname
+    # endregion

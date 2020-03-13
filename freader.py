@@ -40,7 +40,7 @@ class FileReader:
 
     @fname.setter
     def fname(self, fname: str):
-        __fname = fname
+        self.__fname = fname
 
     @property
     def grep_str(self) -> str:
